@@ -14,9 +14,6 @@ namespace CodeSample.Controllers
         /// <param name="q"></param>
         /// <param name="orderBy"></param>
         /// <param name="asc"></param>
-        /// <param name="page"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="departmentId"></param>
         /// <returns></returns>
         public ActionResult Index(string country, string q, string orderBy = null, bool asc = true, int page = 1, int pageSize = 20, int departmentId = 0)
         {
@@ -82,8 +79,7 @@ namespace CodeSample.Controllers
             MVCHelper.DDLState(this, selected: objVM.State, countryName: objVM.Country);
             return View(objVM);
         }
-
-
+       
         [HttpPost]
         public ActionResult Edit(EmployeeVM objVM)
         {
