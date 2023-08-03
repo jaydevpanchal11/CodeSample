@@ -7,7 +7,18 @@ namespace CodeSample.Controllers
 {
     public class EmployeeController : Controller
     {
-        public ActionResult Index(string country, string q, string orderBy = null, bool asc = true, int page = 1, int pageSize = 20, int departmentId=0)
+        /// <summary>
+        /// //
+        /// </summary>
+        /// <param name="country"></param>
+        /// <param name="q"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="asc"></param>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="departmentId"></param>
+        /// <returns></returns>
+        public ActionResult Index(string country, string q, string orderBy = null, bool asc = true, int page = 1, int pageSize = 20, int departmentId = 0)
         {
             using (var objBLL = new EmployeeBLL())
             {
@@ -35,12 +46,12 @@ namespace CodeSample.Controllers
                 var objVM = objBLL.GetById(id);
                 MVCHelper.DDLDepartment(this, selected: objVM.DepartmentId);
                 MVCHelper.DDLCountry(this, selected: objVM.Country);
-                MVCHelper.DDLState(this, selected: objVM.State, countryName:objVM.Country);
+                MVCHelper.DDLState(this, selected: objVM.State, countryName: objVM.Country);
                 return View(objVM);
             }
         }
 
-        
+
         [HttpPost]
         public ActionResult Add(EmployeeVM objVM)
         {
@@ -72,7 +83,7 @@ namespace CodeSample.Controllers
             return View(objVM);
         }
 
-         
+
         [HttpPost]
         public ActionResult Edit(EmployeeVM objVM)
         {
