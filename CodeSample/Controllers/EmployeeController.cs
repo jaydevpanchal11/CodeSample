@@ -7,12 +7,7 @@ namespace CodeSample.Controllers
 {
     public class EmployeeController : Controller
     {
-        /// <summary>
-        /// //
-        /// </summary>
-        /// <param name="country"></param>
-        /// <param name="q"></param>
-        /// <param name="orderBy"></param>
+     
         /// <param name="asc"></param>
         /// <param name="page"></param>
         /// <param name="pageSize"></param>
